@@ -14,6 +14,7 @@ func main() {
 
 	go func() {
 		ch2 <- "shubham"
+		close(ch2)
 	}()
 
 	select {
