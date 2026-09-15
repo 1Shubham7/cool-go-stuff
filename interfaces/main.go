@@ -11,15 +11,20 @@ type Dog struct {
 	age int
 }
 
-func (d *Dog) Bark(input string) string {
+func (d Dog) Bark(input string) string {
 	return fmt.Sprintf("dog is barking: %s", input)
 }
 
 func main() {
-	var a animal = &Dog{
+	var a animal = Dog{
 		Name: "shubham",
 		age: 12,
 	}
 
 	fmt.Println(a.Bark("woff woff"))
+
+	dog, ok := a.(Dog)
+	if ok {
+		fmt.Println("it is a animal: ", dog)
+	}
 }
